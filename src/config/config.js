@@ -215,6 +215,12 @@ export const config = convict({
       default: 'x-cdp-request-id',
       env: 'TRACING_HEADER'
     }
+  },
+  chatApiEndpoint: {
+    doc: 'Gov UK Search endpoint',
+    format: String,
+    default: 'http://localhost:8085/chat',
+    env: 'CHAT_API_ENDPOINT'
   }
 })
 
