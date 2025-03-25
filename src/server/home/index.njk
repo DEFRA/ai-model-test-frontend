@@ -9,8 +9,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-body" data-testid="app-page-body">
+        <h1 class="govuk-heading-l">{{ question }}</h1>
+        <h2 class="govuk-heading-m">Aws Bedrock</h2>
         <p>
-          {{ response.response }}
+          {{ bedrockResponse.answer }}
+        </p>
+        <h2 class="govuk-heading-m">Aws Antrhopic Bedrock</h2>
+        <p>
+          {{ bedrockAnthropicResponse.answer }}
         </p>
       </div>
     </div>

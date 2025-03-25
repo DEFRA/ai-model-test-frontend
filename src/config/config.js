@@ -219,7 +219,7 @@ export const config = convict({
   chatApiEndpoint: {
     doc: 'Gov UK Search endpoint',
     format: String,
-    default: 'http://localhost:8085/chat',
+    default: 'http://localhost:8085',
     env: 'CHAT_API_ENDPOINT'
   }
 })

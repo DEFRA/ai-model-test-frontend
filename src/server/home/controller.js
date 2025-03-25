@@ -10,12 +10,23 @@ const logger = createLogger()
  */
 export const homeController = {
   async handler(_request, h) {
-    const response = await getChatResults("hello")
-    logger.info(response)
+    const question = 'How far away is the moon?'
+
+    const bedrockResponse = await getChatResults('/bedrock/chat', question)
+    logger.info(bedrockResponse)
+
+    const bedrockAnthropicResponse = await getChatResults(
+      '/anthropic/bedrock/chat',
+      question
+    )
+    logger.info(bedrockAnthropicResponse)
+
     return h.view('home/index', {
       pageTitle: 'Home',
       heading: 'Home',
-      response
+      question,
+      bedrockResponse,
+      bedrockAnthropicResponse
     })
   }
 }
