@@ -1,0 +1,47 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+<form action="/answer" method="POST">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <div style="float: right;">
+        {{ govukSelect({
+        id: "searchType",
+        name: "searchType",
+        items: [
+            {
+            value: "bedrock",
+            text: "Bedrock",
+            selected: searchType == "bedrock"
+            },
+            {
+            value: "anthropic-bedrock",
+            text: "Anthropic Bedrock",
+            selected: searchType == "anthropic-bedrock"
+            }
+        ]
+        }) }}
+    </div>
+    </div>
+</div>
+
+{{ appHeading({
+    text: heading
+}) }}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    {{ govukInput({
+        id: "question",
+        name: "question",
+        value: question
+    }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+    {{ govukButton({
+        text: "Send"
+    }) }}
+    </div>
+</div>
+</form>

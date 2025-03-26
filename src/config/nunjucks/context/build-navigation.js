@@ -9,9 +9,9 @@ export function buildNavigation(request) {
       isActive: request?.path === '/'
     },
     {
-      text: 'About',
-      url: '/about',
-      isActive: request?.path === '/about'
+      text: 'Vector Store',
+      url: '/vector-store',
+      isActive: request?.path === '/vector-store'
     }
   ]
 }

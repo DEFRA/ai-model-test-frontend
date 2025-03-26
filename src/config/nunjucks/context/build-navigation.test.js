@@ -19,8 +19,8 @@ describe('#buildNavigation', () => {
       },
       {
         isActive: false,
-        text: 'About',
-        url: '/about'
+        text: 'Vector Store',
+        url: '/vector-store'
       }
     ])
   })
@@ -34,8 +34,8 @@ describe('#buildNavigation', () => {
       },
       {
         isActive: false,
-        text: 'About',
-        url: '/about'
+        text: 'Vector Store',
+        url: '/vector-store'
       }
     ])
   })

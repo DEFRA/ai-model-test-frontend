@@ -43,8 +43,8 @@ describe('#context', () => {
           },
           {
             isActive: false,
-            text: 'About',
-            url: '/about'
+            text: 'Vector Store',
+            url: '/vector-store'
           }
         ],
         serviceName: 'ai-model-test-frontend',
@@ -132,8 +132,8 @@ describe('#context cache', () => {
           },
           {
             isActive: false,
-            text: 'About',
-            url: '/about'
+            text: 'Vector Search',
+            url: '/vector-store'
           }
         ],
         serviceName: 'ai-model-test-frontend',
