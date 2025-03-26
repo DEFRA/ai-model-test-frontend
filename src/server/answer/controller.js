@@ -40,6 +40,11 @@ const answerPostController = {
       logger.info(response)
     }
 
+    if (searchType === 'azure-openai') {
+      response = await getChatResults('/azureopenai/chat', question)
+      logger.info(response)
+    }
+
     if (searchType === 'vector-store') {
       const vectorResponse = await getVectorSearchResults(question)
       logger.info(response)
