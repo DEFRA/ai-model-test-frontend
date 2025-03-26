@@ -1,4 +1,7 @@
-import { getChatResults } from './helpers/fetch/index.js'
+import {
+  getChatResults,
+  getVectorSearchResults
+} from './helpers/fetch/index.js'
 import { createLogger } from '~/src/server/common/helpers/logging/logger.js'
 
 const logger = createLogger()
@@ -35,6 +38,14 @@ const answerPostController = {
     if (searchType === 'anthropic-bedrock') {
       response = await getChatResults('/anthropic/bedrock/chat', question)
       logger.info(response)
+    }
+
+    if (searchType === 'vector-store') {
+      const vectorResponse = await getVectorSearchResults(question)
+      logger.info(response)
+      response = {
+        answer: vectorResponse?.results?.[0]?.page_content
+      }
     }
 
     return h.view('answer/results', {

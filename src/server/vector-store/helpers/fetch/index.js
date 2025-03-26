@@ -26,24 +26,4 @@ const setupData = async () => {
   return data
 }
 
-const getVectorSearchResults = async (question) => {
-  logger.info('Fetching answer using vector search')
-
-  const vectorSearchEndpoint = `${config.get('chatApiEndpoint')}/data/search?query=${question}&k=1`
-  logger.info(`chatEndpoint': ${vectorSearchEndpoint}`)
-
-  const result = await fetch(`${vectorSearchEndpoint}`, {
-    method: 'GET'
-  })
-
-  const data = await result?.json()
-
-  if (!data) {
-    logger.error('Failed to fetch search results or invalid response structure')
-    return {}
-  }
-
-  return data
-}
-
-export { setupData, getVectorSearchResults }
+export { setupData }
