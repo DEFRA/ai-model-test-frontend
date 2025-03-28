@@ -11,9 +11,14 @@
         name: "searchType",
         items: [
             {
-            value: "bedrock",
-            text: "Bedrock",
-            selected: searchType == "bedrock"
+            value: "langchain-bedrock",
+            text: "Bedrock (LangChain)",
+            selected: searchType == "langchain-bedrock"
+            },
+            {
+            value: "langchain-azure-openai",
+            text: "Azure OpenAI (LangChain)",
+            selected: searchType == "langchain-azure-openai"
             },
             {
             value: "anthropic-bedrock",

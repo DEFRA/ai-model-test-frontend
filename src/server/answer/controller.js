@@ -30,8 +30,13 @@ const answerPostController = {
     const question = _request.payload.question
     let response = {}
 
-    if (searchType === 'bedrock') {
-      response = await getChatResults('/bedrock/chat', question)
+    if (searchType === 'langchain-azure-openai') {
+      response = await getChatResults('/langchain/azureopenai/chat', question)
+      logger.info(response)
+    }
+
+    if (searchType === 'langchain-bedrock') {
+      response = await getChatResults('/langchain/bedrock/chat', question)
       logger.info(response)
     }
 
