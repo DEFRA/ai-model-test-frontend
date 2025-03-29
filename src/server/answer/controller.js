@@ -58,6 +58,16 @@ const answerPostController = {
       }
     }
 
+    if (searchType === 'vector-store-langchain-chat') {
+      response = await getChatResults('/langchain/simple/rag/chat', question)
+      logger.info(response)
+    }
+
+    if (searchType === 'vector-store-langgraph-chat') {
+      response = await getChatResults('/langgraph/rag/chat', question)
+      logger.info(response)
+    }
+
     return h.view('answer/results', {
       pageTitle: 'Ask a question...',
       heading: 'Ask a question...',
